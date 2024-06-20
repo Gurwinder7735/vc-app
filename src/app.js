@@ -25,12 +25,14 @@ try {
   // parse application/json
   app.use(bodyParser.json());
 
-  app.use('/api/auth', [router]);
+  app.use('/api/chat', [router]);
 
   app.use(errorHandler);
 
   db.sequelize.authenticate().then(() => {
     console.log("DB CONNECTED SUCCESSFULLY.");
+  }).catch(err => {
+    console.log(err);
   })
 
   module.exports = app;
