@@ -25,7 +25,7 @@ try {
   // parse application/json
   app.use(bodyParser.json());
 
-  app.use('/api/chat', [router]);
+  app.use('/api/auth', [router]);
 
   app.use(errorHandler);
 
